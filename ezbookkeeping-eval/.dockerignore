@@ -1,0 +1,14 @@
+.git
+.github
+.gitea
+node_modules
+dist
+data
+storage
+log
+backups
+tmp
+*.db
+*.log
+*.tar.gz
+testdata

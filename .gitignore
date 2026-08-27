@@ -1,0 +1,33 @@
+# Local secrets and runtime state
+.env
+.env.*
+!.env.example
+/ezbookkeeping-eval/data/
+/ezbookkeeping-eval/storage/
+/ezbookkeeping-eval/log/
+/ezbookkeeping-eval/backups/
+/ezbookkeeping-eval/tmp/
+/ezbookkeeping-eval/outputs/
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.log
+**/*.pem
+**/*.key
+**/*.p12
+**/*credentials*
+**/*secret*.json
+
+# Dependency and build output
+**/node_modules/
+**/dist/
+**/*.tar.gz
+**/ezbookkeeping-eval-runtime/
+
+# IDE and OS state
+.DS_Store
+**/.DS_Store
+**/xcuserdata/
+**/*.xcuserstate
+.idea/
+.vscode/
