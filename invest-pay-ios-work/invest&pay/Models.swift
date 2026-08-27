@@ -50,16 +50,16 @@ struct DashboardData: Decodable, Sendable {
     static let preview = DashboardData(
         month: Month.current,
         periodStatus: "DRAFT",
-        salaryAmountMinor: 30_000_00,
-        actualOpexMinor: 8_650_00,
-        normalizedOpexMinor: 7_980_00,
-        capexMinor: 2_000_00,
-        fcfMinor: 19_350_00,
-        assetChangeMinor: 19_350_00,
+        salaryAmountMinor: 0,
+        actualOpexMinor: 0,
+        normalizedOpexMinor: 0,
+        capexMinor: 0,
+        fcfMinor: 0,
+        assetChangeMinor: 0,
         unclassifiedItemCount: 0,
         dataType: "ACTUAL",
         dataQualityStatus: "READY",
-        endingInvestableAssetsMinor: 600_000_00,
+        endingInvestableAssetsMinor: 0,
         confirmedInvestmentReturnMinor: 0
     )
 }
@@ -74,15 +74,15 @@ struct TrendSeries: Decodable, Sendable {
 
     static let preview = TrendSeries(
         points: [
-            TrendPoint(month: "2026-05", dataType: "ACTUAL", periodStatus: "CLOSED", salaryAmountMinor: 3_000_000, otherIncomeAmountMinor: 0, opexMinor: 850_000, capexMinor: 0, fcfMinor: 2_150_000, endingInvestableAssetsMinor: 55_000_000, dataQualityStatus: "READY", source: "ledger"),
-            TrendPoint(month: "2026-06", dataType: "ACTUAL", periodStatus: "CLOSED", salaryAmountMinor: 3_000_000, otherIncomeAmountMinor: 0, opexMinor: 900_000, capexMinor: 100_000, fcfMinor: 2_000_000, endingInvestableAssetsMinor: 57_000_000, dataQualityStatus: "READY", source: "ledger"),
-            TrendPoint(month: "2026-07", dataType: "ACTUAL", periodStatus: "DRAFT", salaryAmountMinor: 3_000_000, otherIncomeAmountMinor: 0, opexMinor: 865_000, capexMinor: 200_000, fcfMinor: 1_935_000, endingInvestableAssetsMinor: 58_935_000, dataQualityStatus: "READY", source: "ledger")
+            TrendPoint(month: "2024-01", dataType: "ACTUAL", periodStatus: "CLOSED", salaryAmountMinor: 0, otherIncomeAmountMinor: 0, opexMinor: 0, capexMinor: 0, fcfMinor: 0, endingInvestableAssetsMinor: 0, dataQualityStatus: "READY", source: "preview"),
+            TrendPoint(month: "2024-02", dataType: "ACTUAL", periodStatus: "CLOSED", salaryAmountMinor: 0, otherIncomeAmountMinor: 0, opexMinor: 0, capexMinor: 0, fcfMinor: 0, endingInvestableAssetsMinor: 0, dataQualityStatus: "READY", source: "preview"),
+            TrendPoint(month: "2024-03", dataType: "ACTUAL", periodStatus: "DRAFT", salaryAmountMinor: 0, otherIncomeAmountMinor: 0, opexMinor: 0, capexMinor: 0, fcfMinor: 0, endingInvestableAssetsMinor: 0, dataQualityStatus: "READY", source: "preview")
         ],
         actualMonthCount: 3,
         closedHistoryMonthCount: 2,
         forecastMonthCount: 0,
         opexHistoryMonthsRequired: 3,
-        currentMonth: "2026-07"
+        currentMonth: "2024-03"
     )
 }
 
@@ -119,7 +119,7 @@ struct Expense: Decodable, Identifiable, Sendable {
 
     static let preview = Expense(
         id: UUID().uuidString,
-        occurredOn: "2026-07-28",
+        occurredOn: "2024-01-01",
         merchantName: "示例商户",
         totalAmountMinor: 12_800,
         classificationStatus: "CLASSIFIED",
