@@ -25,7 +25,8 @@ docker buildx build --platform linux/amd64,linux/arm64 \
 ```
 
 推送到 `main` 或创建 `v*` 标签后，`.github/workflows/docker-publish.yml` 也会使用
-GitHub Actions 自动构建 `linux/amd64` 与 `linux/arm64` 并发布到该仓库的 GHCR。
+GitHub Actions 自动构建并发布 `linux/amd64` 镜像到该仓库的 GHCR。Dockerfile 保留
+ARM64 构建支持，可在 ARM64 Docker builder 上按同样命令构建。
 
 ## 目录
 
