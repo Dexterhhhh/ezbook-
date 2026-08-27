@@ -27,6 +27,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Normalize image name
+        id: image
+        shell: bash
+        run: echo "name=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/ezbook-magic" >> "$GITHUB_OUTPUT"
+
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
@@ -35,5 +40,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/ezbook-magic:${{ github.sha }}
-            ghcr.io/${{ github.repository_owner }}/ezbook-magic:latest
+            ${{ steps.image.outputs.name }}:${{ github.sha }}
+            ${{ steps.image.outputs.name }}:latest
